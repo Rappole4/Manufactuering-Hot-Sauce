@@ -1,5 +1,6 @@
 class SaucesController < ApplicationController
   before_action :set_sauce, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /sauces
   # GET /sauces.json
