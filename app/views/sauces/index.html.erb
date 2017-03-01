@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Description</th>
       <th>Origin</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @sauces.each do |sauce| %>
       <tr>
+        <td><%=image_tag sauce.image.url(:small)%></td>
         <td><%= sauce.name %></td>
         <td><%= sauce.description %></td>
         <td><%= sauce.origin %></td>
