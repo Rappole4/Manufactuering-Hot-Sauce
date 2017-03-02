@@ -29,6 +29,7 @@ class SaucesController < ApplicationController
   # POST /sauces.json
   def create
     @sauce = Sauce.new(sauce_params)
+    @locations = Location.all
 
     respond_to do |format|
       if @sauce.save
