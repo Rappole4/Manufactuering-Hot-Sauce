@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302211000) do
+
+ActiveRecord::Schema.define(version: 20170302211658) do
+
 
   create_table "locations", force: :cascade do |t|
     t.string   "city",       limit: 128
@@ -19,12 +21,22 @@ ActiveRecord::Schema.define(version: 20170302211000) do
     t.datetime "updated_at",             null: false
   end
 
+
   create_table "new_orders", force: :cascade do |t|
     t.string   "sauce_name"
     t.integer  "quantity"
     t.string   "destination"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "sauce_orders", force: :cascade do |t|
+    t.integer  "sauce_id"
+    t.integer  "newOrder_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["newOrder_id"], name: "index_sauce_orders_on_newOrder_id"
+    t.index ["sauce_id"], name: "index_sauce_orders_on_sauce_id"
   end
 
   create_table "sauces", force: :cascade do |t|
