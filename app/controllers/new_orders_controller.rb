@@ -15,16 +15,22 @@ class NewOrdersController < ApplicationController
   # GET /new_orders/new
   def new
     @new_order = NewOrder.new
+    @sauces = Sauce.all
+    @locations = Location.all
   end
 
   # GET /new_orders/1/edit
   def edit
+    @sauces = Sauce.all
+    @locations = Location.all
   end
 
   # POST /new_orders
   # POST /new_orders.json
   def create
     @new_order = NewOrder.new(new_order_params)
+    @sauces = Sauce.all
+    @locations = Location.all
 
     respond_to do |format|
       if @new_order.save
