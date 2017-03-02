@@ -16,6 +16,7 @@ class SaucesController < ApplicationController
   # GET /sauces/new
   def new
     @sauce = Sauce.new
+    @locations = Location.all
   end
 
   # GET /sauces/1/edit
