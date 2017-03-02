@@ -1,6 +1,6 @@
 <% @sauces.each do |sauce| %>
     <div class="product">
-      <%=link_to sauce_path(sauce) do %>
+      <%=link_to new_new_order_path(@new_order) do %>
         <div class="p-image sauce_<%=sauce.id%>" style='background-image: url("<%=sauce.image%>")'></div>
       <%end%>
       <div class="p-name">
