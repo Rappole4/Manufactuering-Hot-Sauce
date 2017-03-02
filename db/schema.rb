@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 20170302211658) do
 
   create_table "sauce_orders", force: :cascade do |t|
     t.integer  "sauce_id"
-    t.integer  "newOrder_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["newOrder_id"], name: "index_sauce_orders_on_newOrder_id"
+    t.integer  "new_order_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["new_order_id"], name: "index_sauce_orders_on_new_order_id"
     t.index ["sauce_id"], name: "index_sauce_orders_on_sauce_id"
   end
 
