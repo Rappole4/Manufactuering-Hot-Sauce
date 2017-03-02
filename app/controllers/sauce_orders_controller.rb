@@ -1,0 +1,2 @@
+class SauceOrdersController < ApplicationController
+end
