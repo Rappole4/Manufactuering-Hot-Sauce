@@ -23,6 +23,7 @@ class SaucesController < ApplicationController
 
   # GET /sauces/1/edit
   def edit
+    @locations = Location.all
   end
 
   # POST /sauces
@@ -30,6 +31,7 @@ class SaucesController < ApplicationController
   def create
     @sauce = Sauce.new(sauce_params)
     @locations = Location.all
+    @sauce.user_id = current_user.id
 
     respond_to do |format|
       if @sauce.save
