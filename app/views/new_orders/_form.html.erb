@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :sauce_name %>
-    <%= f.text_field :sauce_name %>
+    <%= f.select :sauce_name, @sauces.map{|y|["#{y.name}",y.id]} %>
   </div>
 
   <div class="field">
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :destination %>
-    <%= f.text_field :destination %>
+    <%= f.select :destination, @locations.map{|x| ["#{x.city}, #{x.state}", x.id]} %>
   </div>
 
   <div class="actions">
