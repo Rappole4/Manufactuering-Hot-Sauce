@@ -1,0 +1,17 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.product {
+  display: inline-block;
+  border: 1px red solid;
+  .p-image{
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px red solid;
+
+  }
+}

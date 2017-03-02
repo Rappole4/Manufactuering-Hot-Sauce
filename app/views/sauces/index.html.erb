@@ -1,35 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Sauces</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Origin</th>
-      <th>Ingredients</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sauces.each do |sauce| %>
-      <tr>
-        <td><%=image_tag sauce.image.url(:small)%></td>
-        <td><%= sauce.name %></td>
-        <td><%= sauce.description %></td>
-        <td><%= sauce.origin %></td>
-        <td><%= sauce.ingredients %></td>
-        <td><%= link_to 'Show', sauce %></td>
-        <td><%= link_to 'Edit', edit_sauce_path(sauce) %></td>
-        <td><%= link_to 'Destroy', sauce, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Sauce', new_sauce_path %>
+<% @sauces.each do |sauce| %>
+    <div class="product">
+      <div class="p-image sauce_<%=sauce.id%>" style='background-image: url("<%=sauce.image%>")'></div>
+      <div class="p-name">
+        <%= sauce.name %>
+      </div>
+      <%= link_to 'Show', sauce %>
+      <%= link_to 'Edit', edit_sauce_path(sauce) %>
+      <%= link_to 'Destroy', sauce, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+<% end %>
