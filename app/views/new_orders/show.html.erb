@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sauce name:</strong>
+  <%= @new_order.sauce_name %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @new_order.quantity %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @new_order.destination %>
+</p>
+
+<%= link_to 'Edit', edit_new_order_path(@new_order) %> |
+<%= link_to 'Back', new_orders_path %>
