@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170302125046) do
   create_table "sauces", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "origin"
+    t.integer  "origin_id"
     t.text     "ingredients"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false

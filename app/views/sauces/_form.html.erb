@@ -71,8 +71,8 @@
     <tr>
       <td colspan="2" class="ingredientOrigin">
         <div class="newSauceField" class="field">
-          <%= f.label :origin %><br>
-          <%= f.select :origin, @locations.map{|x| ["#{x.city}, #{x.state}", x.id]} %>
+          <%= f.label :origin_id %><br>
+          <%= f.select :origin_id, @locations.map{|x| ["#{x.city}, #{x.state}", x.id]} %>
         </div>
       </td>
     </tr>
