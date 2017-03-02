@@ -1,3 +1,59 @@
 // Place all the styles related to the sauces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+	background-color:gray;
+}
+
+#newSauceForm {
+	background-color:lightgray;
+}
+
+#ingredientList {
+	border: 3px solid black;
+	width:900px;
+	height:700px;
+	margin: 1%;
+	font-size:32px;
+	float:right;
+	text-align:center;
+	background-color:lightgreen;
+}
+
+#ingredientList1 {
+	border: 3px solid black;
+	width:100px;
+	height:500px;
+	margin: 1%;
+	font-size:32px;
+	float:left;
+	text-align:center;
+	background-color:red;
+}
+
+.ingredientOrigin {
+	border: 3px solid black;
+	width:450px;
+}
+
+.ingredientOrigin1 {
+	border: 3px solid black;
+	width:200px;
+	float:left;
+}
+
+.ingredient {
+	font-size:38px;
+}
+
+#newSauceBack {
+	clear:left;
+}
+
+.newSauceField {
+	font-size:26px;
+	padding:6px;
+	background-color:black;
+	color:red;
+}
