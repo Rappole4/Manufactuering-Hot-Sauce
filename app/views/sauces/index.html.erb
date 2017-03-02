@@ -1,11 +1,11 @@
 <% @sauces.each do |sauce| %>
     <div class="product">
-      <div class="p-image sauce_<%=sauce.id%>" style='background-image: url("<%=sauce.image%>")'></div>
+      <%=link_to sauce_path(sauce) do %>
+        <div class="p-image sauce_<%=sauce.id%>" style='background-image: url("<%=sauce.image%>")'></div>
+      <%end%>
       <div class="p-name">
         <%= sauce.name %>
       </div>
-      <%= link_to 'Show', sauce %>
-      <%= link_to 'Edit', edit_sauce_path(sauce) %>
-      <%= link_to 'Destroy', sauce, method: :delete, data: { confirm: 'Are you sure?' } %>
+
     </div>
 <% end %>

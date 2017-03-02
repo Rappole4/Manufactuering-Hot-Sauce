@@ -23,5 +23,14 @@
   <%= @sauce.ingredients %>
 </p>
 
-<%= link_to 'Edit', edit_sauce_path(@sauce) %> |
-<%= link_to 'Back', sauces_path %>
+<%if @sauce.user_id == current_user.id%>
+  <div class="text-center edit-links">
+    <%= link_to "Edit", edit_sauce_path(@sauce) %>
+    |
+    <%= link_to "Cancel", sauces_path%>
+  </div>
+<%else%>
+  <div class="text-center edit-links">
+    <%= link_to "Cancel", sauces_path%>
+  </div>
+<% end %>
