@@ -1,6 +1,8 @@
 class SaucesController < ApplicationController
-  before_action :set_sauce, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
+  before_action :set_sauce, only: [:show, :edit, :update, :destroy]
+  before_action :owned_sauce, only: [:edit, :delete, :update]
+
 
   # GET /sauces
   # GET /sauces.json
@@ -73,4 +75,12 @@ class SaucesController < ApplicationController
     def sauce_params
       params.require(:sauce).permit(:name, :description, :origin, :ingredients,:image)
     end
+
+    def owned_sauce
+      unless current_user == @sauce.user
+        flash[:alert] = "This is not your post!"
+        redirect_to root_path
+      end
+    end
+
 end
