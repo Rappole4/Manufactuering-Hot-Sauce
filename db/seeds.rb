@@ -6,6 +6,38 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+### Ingredients
+Ingredient.create([
+  {
+    name: 'Hak Man'
+  },{
+    name: 'James Sweet'
+  },{
+    name: 'Crews'
+  },{
+    name: 'Joel'
+  },{
+    name: 'Nick'
+  },{
+    name: 'Habanero'
+  },{
+    name: 'Turkish Pepper'
+  },{
+    name: 'Sweet Pepper'
+  },{
+    name: 'Sumac'
+  },{
+    name: 'Serrano'
+  },{
+    name: 'New Mexico Chili'
+  },{
+    name: 'Cayenne'
+  },{
+    name: 'Salt'
+  },{
+    name: 'Vinegar'
+  }
+])
 ### Locations
 Location.create([
   {

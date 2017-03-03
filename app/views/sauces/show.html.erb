@@ -18,11 +18,6 @@
   <%= @sauce.origin.fullorigin %>
 </p>
 
-<p>
-  <strong>Ingredients:</strong>
-  <%= @sauce.ingredients %>
-</p>
-
 <%if @sauce.user_id == current_user.id%>
   <div class="text-center edit-links">
     <%= link_to "Edit", edit_sauce_path(@sauce) %>
