@@ -1,2 +1,0 @@
-class SauceOrdersController < ApplicationController
-end

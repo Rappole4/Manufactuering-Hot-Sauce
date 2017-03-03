@@ -1,10 +1,10 @@
-<%= form_for(new_order) do |f| %>
-  <% if new_order.errors.any? %>
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(new_order.errors.count, "error") %> prohibited this new_order from being saved:</h2>
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
-      <% new_order.errors.full_messages.each do |message| %>
+      <% @order.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :sauce_name %><br>
-    <%= f.select :sauce_name, @sauces.map{|y|["#{y.name}",y.id]} %>
+    <%= f.select :sauce_id, @sauces.map{|y|["#{y.name}",y.id]} %>
   </div>
 
   <div class="field">
