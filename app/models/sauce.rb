@@ -6,4 +6,6 @@ class Sauce < ApplicationRecord
   has_attached_file :image, styles: { :small => "300x" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   has_many :orders
+  has_many :ingredients, :through => :factories
+  has_many :factories
 end
