@@ -15,16 +15,25 @@ class FactoriesController < ApplicationController
   # GET /factories/new
   def new
     @factory = Factory.new
+    @sauces = Sauce.all
+    @ingredients = Ingredient.all
   end
 
   # GET /factories/1/edit
   def edit
+    @factory = Factory.new
+    @sauces = Sauce.all
+    @ingredients = Ingredient.all
   end
 
   # POST /factories
   # POST /factories.json
   def create
     @factory = Factory.new(factory_params)
+    @sauces = Sauce.all
+    @ingredients = Ingredient.all
+
+    
 
     respond_to do |format|
       if @factory.save
@@ -69,6 +78,6 @@ class FactoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def factory_params
-      params.fetch(:factory, {})
+      params.require(:factory).permit(:sauce_id, :ingredient_id)
     end
 end
