@@ -1,4 +1,4 @@
 class Factory < ApplicationRecord
-	belongs_to :sauces
-	belongs_to :ingredients
+	belongs_to :sauce
+	belongs_to :ingredient
 end

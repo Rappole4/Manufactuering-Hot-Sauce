@@ -11,7 +11,24 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :sauce_name %><br>
+    <%= f.select :sauce_id, @sauces.map{|y|["#{y.name}",y.id]} %>
+  </div>
+    <div class="field">
+    <%= f.label :ingredient_names %><br>
+    <% @ingredients.each do |ingredient| %>
+    <%= check_box_tag("ingredient[]", ingredient.name) %><%= ingredient.name %><br>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+<% end %>
+
+<h2>Our Ingredients</h2>
+<ul>
+<% @ingredients.each do |ingredient| %>
+  <li><%= ingredient.name %></li>
 <% end %>
