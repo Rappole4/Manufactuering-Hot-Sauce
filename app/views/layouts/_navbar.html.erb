@@ -13,7 +13,9 @@
     <div id="bs-navbar-collapse-1" class="collapse navbar-collapse">
       <ul class='nav navbar-nav navbar-right'>
         <% if user_signed_in? %>
+          <li> <%=link_to "New Ingredient", new_ingredient_path%> </li>
           <li> <%=link_to "New Sauce", new_sauce_path%> </li>
+          <li> <%=link_to "New Factory", new_factory_path%> </li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li>
         <%else%>
           <li> <%=link_to "Login", new_user_session_url%> </li>
