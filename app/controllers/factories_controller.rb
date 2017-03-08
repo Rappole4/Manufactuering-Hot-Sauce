@@ -29,15 +29,29 @@ class FactoriesController < ApplicationController
   # POST /factories
   # POST /factories.json
   def create
-    @factory = Factory.new(factory_params)
+    status = true
+    begin
+      Ingredient.transaction do
+        (params[:ingredient]||[]).each do |ingredient|
+
+          Factory.create!(
+            sauce_id: params[:factory][:sauce_id],
+            ingredient_id: ingredient
+          )
+        end
+      end
+    rescue 
+      status = false
+    end
+    #@factory = Factory.new(factory_params)
     @sauces = Sauce.all
     @ingredients = Ingredient.all
 
     
 
     respond_to do |format|
-      if @factory.save
-        format.html { redirect_to @factory, notice: 'Factory was successfully created.' }
+      if status
+        format.html { redirect_to factories_path, notice: 'Factory was successfully created.' }
         format.json { render :show, status: :created, location: @factory }
       else
         format.html { render :new }

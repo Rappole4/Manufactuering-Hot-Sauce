@@ -12,9 +12,11 @@
   <tbody>
     <% @ingredients.each do |ingredient| %>
       <tr>
-        <td><%= link_to 'Show', ingredient %></td>
-        <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="ingredientspace"><%= ingredient.name %></th>
+        <td class="ingredientspace"><strong>Cost:</strong>$<%= ingredient.cost %></td>
+        <td class="ingredientspace" class="ingredientalign"><%= link_to 'Show', ingredient %></td>
+        <td class="ingredientspace" class="ingredientalign"><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
+        <td class="ingredientspace" class="ingredientalign"><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -5,14 +5,18 @@
 <table>
   <thead>
     <tr>
+      <th><strong>Sauce---></strong></th>
+      <th><strong> Ingredients</strong></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @factories.each do |factory| %>
+
       <tr>
-        <td><%= link_to 'Show', factory %></td>
+        <td><%=factory.sauce.name%></td>
+        <td><%=factory.ingredient.name%></td>
         <td><%= link_to 'Edit', edit_factory_path(factory) %></td>
         <td><%= link_to 'Destroy', factory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

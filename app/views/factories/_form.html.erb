@@ -18,7 +18,7 @@
     <div class="field">
     <%= f.label :ingredient_names %><br>
     <% @ingredients.each do |ingredient| %>
-    <%= check_box_tag("ingredient[]", ingredient.name) %><%= ingredient.name %><br>
+    <%= check_box_tag("ingredient[]", ingredient.id) %><%= ingredient.name %>: $<%= ingredient.cost %><br>
     <% end %>
   </div>
 
